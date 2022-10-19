@@ -33,4 +33,18 @@ class UserController extends Controller
         ])->assignRole($request->role);
         return redirect(route('viewusers'));
     }
+    public function editUser($id)
+    {
+        $user = User::find($id);
+        return view('frontend.editUser')->with(compact('user'));
+    }
+    public function updateUser(Request $request, $id)
+    {
+    }
+    public function deleteUser(Request $request)
+    {
+        $user =  User::find($request->id);
+        $user->delete();
+        return redirect(route('viewusers'));
+    }
 }

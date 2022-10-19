@@ -64,6 +64,11 @@ Route::group(['middleware' => ['auth']], function () {
 
             Route::get('/adduser', [UserController::class, 'index'])->name('regUser');
             Route::post('/adduser', [UserController::class, 'addUsers'])->name('addUser');
+            Route::get('/edituser/{id}', [UserController::class, 'editUser'])->name('editUser');
+            Route::put('/updateuser/{id}', [UserController::class, 'updateUser'])->name('UpdateUser');
+            Route::delete('deleteuser/{id}', [UserController::class, 'deleteUser'])->name('deleteUser');
+
+
             Route::resource('pharmacies', PharmacyController::class);
 
 

@@ -22,6 +22,7 @@
                             <th scope="col">Name</th>
                             <th scope="col">Email</th>
                             <th scope="col">Verified</th>
+                            <th scope="col">Action</th>
 
                         </tr>
                     </thead>
@@ -47,6 +48,18 @@
                                             <i class="fa fa-times-circle text-danger" aria-hidden="true"></i>
 
                                         </center>
+                                    @endif
+                                </td>
+                                <td>
+                                    <a href="{{ Route('editUser', $item->id) }}"><button
+                                            class="btn btn-success">Edit</button></a><br><br>
+                                    @if (!($item->id == 1))
+                                        <form action="{{ Route('deleteUser', $item->id) }}" method="POST">
+                                            @method('delete')
+                                            @csrf
+                                            <a href=""><button type="submit"
+                                                    class="btn btn-danger">Delete</button></a>
+                                        </form>
                                     @endif
                                 </td>
                             </tr>

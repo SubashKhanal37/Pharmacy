@@ -32,6 +32,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+        if (Auth::user()->id == '1') Auth::user()->assignRole('Admin');
         if (Auth::user()->hasRole('Admin'))
             return view('home');
         else if (Auth::user()->hasRole('Pharmacy'))

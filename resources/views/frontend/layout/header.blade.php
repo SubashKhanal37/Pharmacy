@@ -40,6 +40,10 @@
     <link href="{{ url('frontend/css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- Template Stylesheet -->
     <link href="{{ url('frontend/css/style.css') }}" rel="stylesheet">
+    <!-- Font Awesome -->
+    {{-- mdbootstrap --}}
+
+
 </head>
 
 <body>
